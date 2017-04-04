@@ -5,6 +5,25 @@
     <title></title>
   </head>
   <body style="text-align:center; margin: 50px">
-    <h1>ESPERANDO A MARIANA TERMINAR O DESIGN</h1>
+    <h2>ESPERANDO A MARIANA TERMINAR O DESIGN</h2>
+    <h3>O SITE FOI LANÇADO EM:</h3>
+    <h1 id="release"></h1>
+    <br><br>
+    <h3>JÁ SE PASSARAM:</h3>
+    <h1><span id="last"></span>DIAS!</h1>
   </body>
 </html>
+<script type="text/javascript">
+  (function() {
+    releaseDate = new Date(1491225083463);
+    today = new Date();
+
+    utc1 = Date.UTC(releaseDate.getFullYear(), releaseDate.getMonth(), releaseDate.getDate());
+    utc2 = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
+    diff = Math.floor((utc2 - utc1) / (1000 * 60 * 60 * 24));
+
+    document.getElementById("release").innerHTML = releaseDate.toLocaleDateString();
+    document.getElementById("last").innerHTML = diff+" ";
+
+  }())
+</script>
